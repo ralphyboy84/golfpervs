@@ -113,7 +113,7 @@ require_once("globals/globals.php");
                       <?php
                         echo "<p>$userInfo</p>";
                       ?>
-                      <small>Member since tbd</small>
+                        <small>Member since t be developed</small>
                     </p>
                   </li>
                   <!-- Menu Footer-->
