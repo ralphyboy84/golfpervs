@@ -151,7 +151,7 @@ $(document).ready(function(){
 		var returnFlag=0;
 		
 		//check to see if we have any values for the add start date input
-		if (document.getElementById("startDate").value == "") {
+		if (document.getElementById("startDate").value === "") {
 			$("#updateStartDate").focus();
 			$("#hiddenStartDateDiv").show();
 			$("#updateStartDateForm").addClass("has-error");
@@ -163,7 +163,7 @@ $(document).ready(function(){
 		
 		if ($("#updateShowEndDate").is(":checked")) {
 			//check to see if we have any values for the end date input
-			if (document.getElementById("endDate").value == "") {
+			if (document.getElementById("endDate").value === "") {
 				$("#hiddenEndDateDiv").show();
 				$("#endEventDateHiddenRow").addClass("has-error");
 				returnFlag=1;
@@ -174,11 +174,11 @@ $(document).ready(function(){
 		}
 		
 		//check to see if we have any values for the event Name input
-		if (document.getElementById("eventName").value == "") {
+		if (document.getElementById("eventName").value === "") {
 			$("#hiddenEventNameDiv").show();
 			$("#updateEventNameForm").addClass("has-error");
 			
-			if (document.getElementById("inputUsername").value != "") {
+			if (document.getElementById("inputUsername").value !== "") {
 				$("#eventName").focus();
 			}
 			returnFlag=1;
@@ -229,7 +229,7 @@ $(document).ready(function(){
 		var returnFlag=0;
 		
 		//check to see if we have any values for the add start date input
-		if (document.getElementById("startDate").value == "") {
+		if (document.getElementById("startDate").value === "") {
 			$("#addEventStartDate").focus();
 			$("#hiddenStartDateDiv").show();
 			$("#startDateForm").addClass("has-error");
@@ -242,7 +242,7 @@ $(document).ready(function(){
 				
 		if ($("#showEndDate").is(":checked")) {
 			//check to see if we have any values for the end date input
-			if (document.getElementById("endDate").value == "") {
+			if (document.getElementById("endDate").value === "") {
 				$("#hiddenEndDateDiv").show();
 				$("#endEventDateHiddenRow").addClass("has-error");
 				returnFlag=1;
@@ -253,11 +253,11 @@ $(document).ready(function(){
 		}
 		
 		//check to see if we have any values for the event Name input
-		if (document.getElementById("eventName").value == "") {
+		if (document.getElementById("eventName").value === "") {
 			$("#hiddenEventNameDiv").show();
 			$("#eventNameForm").addClass("has-error");
 			
-			if (document.getElementById("inputUsername").value != "") {
+			if (document.getElementById("inputUsername").value !== "") {
 				$("#eventName").focus();
 			}
 			returnFlag=1;

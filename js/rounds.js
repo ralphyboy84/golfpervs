@@ -69,7 +69,7 @@ $(document).ready(function(){
                .done(function( html2 ) {
                     checkSession(html);
                     $("#mainContent").html( html2 );	
-                })
+                });
                
                $.ajax({
                     type: "POST",
@@ -77,9 +77,9 @@ $(document).ready(function(){
                     data: {
                         roundid: html
                     }
-                })
+                });
             }
-        }) 
+        }); 
     });
     
     editRound = function(roundid, edit, update) {
@@ -99,7 +99,7 @@ $(document).ready(function(){
             checkSession(html);
             $("#mainContent").html( html );	
             initialiseSwipeForScoreAdd();
-        })
+        });
     };
     
     $("body").on("click", "#newRoundButton", function() {
@@ -119,7 +119,7 @@ $(document).ready(function(){
             checkSession(html);
             $("#mainContent").html( html );	
             //initialiseSwipeForScoreAdd();
-        })
+        });
     });
     
     $("body").on("click", "#continueRoundButton", function() {
@@ -144,14 +144,14 @@ $(document).ready(function(){
             if (hole != 19) {
                 initialiseSwipeForScoreAdd();
             }
-        })
+        });
     });
                              
     $("body").on("click", "#addRoundButton", function() {
         var mandatories = ["add_round_course_select", "add_round_tee_select", "date"];
         var errorFlag = "";
         
-        for (x in mandatories) {
+        for (var x in mandatories) {
             if (!$("#"+mandatories[x]).val()) {
                 $("#"+mandatories[x]+"div").addClass("has-error");
                 errorFlag = true;
@@ -180,7 +180,7 @@ $(document).ready(function(){
     $("body").on("change", "#add_round_course_select", function() {
         $.getJSON( "ajax/rounds/gettees.php?course="+this.value, function( json ) {
              if (json) {
-                $("#add_round_tee_select").html("<option value=''>Select tee....</option>")
+                $("#add_round_tee_select").html("<option value=''>Select tee....</option>");
                 $.each(json, function(keys, vals) {
                     $("#add_round_tee_select").append("<option value='"+vals.tee+"'>"+vals.teelabel+"</option>");
                 });
@@ -228,8 +228,7 @@ $(document).ready(function(){
         });     
     });
     
-    getSwipeVal = function(elToGet)
-    {
+    getSwipeVal = function(elToGet) {
         var el = document.getElementById(elToGet).getElementsByTagName("li");
 
         for (var i=0; i<el.length; i++) {
@@ -239,14 +238,13 @@ $(document).ready(function(){
         }
 
         return score;
-    }
+    };
     
     $("body").on("change", "#score_select", function() {
         $("#score").val($("#score_select").val());
     });
     
-    changeMe = function (someVal)
-    {
+    changeMe = function (someVal) {
         if (someVal.className == "inActiveF") {
             vals = document.getElementsByClassName("activeF");
 
@@ -273,8 +271,8 @@ $(document).ready(function(){
         if (someVal.className == "inActiveG") {
             vals = document.getElementsByClassName("activeG");
 
-            for (var i=0; i < vals.length; i++) {
-                document.getElementById(vals[i].id).className = "inActiveG";
+            for (var z=0; z < vals.length; z++) {
+                document.getElementById(vals[z].id).className = "inActiveG";
             }
 
             document.getElementById(someVal.id).className = "activeG";
@@ -312,8 +310,8 @@ $(document).ready(function(){
         if (someVal.className == "inActiveS") {
             vals = document.getElementsByClassName("activeS");
 
-            for (var i=0; i < vals.length; i++) {
-                document.getElementById(vals[i].id).className = "inActiveS";
+            for (var q=0; q < vals.length; q++) {
+                document.getElementById(vals[q].id).className = "inActiveS";
             }
 
             document.getElementById(someVal.id).className = "activeS";
@@ -332,7 +330,7 @@ $(document).ready(function(){
                 $("#sandsave").val(2);
             }
         }
-    }
+    };
     
     initialiseSwipeForScoreAdd = function() 
     {
@@ -357,7 +355,7 @@ $(document).ready(function(){
                 }
             });
 
-            var elem = document.getElementById('mySwipePutts');
+            elem = document.getElementById('mySwipePutts');
             var puttBullets = document.getElementById('position2');
             window.mySwipe = Swipe(elem, {
                 startSlide: document.getElementById("defaultPuttsForSwipe").value,
@@ -377,7 +375,7 @@ $(document).ready(function(){
                 }
             });
 
-            var elem = document.getElementById('mySwipeLength');
+            elem = document.getElementById('mySwipeLength');
             var lengthBullets = document.getElementById('position3');
             window.mySwipe = Swipe(elem, {
                 startSlide: document.getElementById("defaultLengthForSwipe").value,
@@ -397,5 +395,5 @@ $(document).ready(function(){
                 }
             });
         //}
-    }
+    };
 });

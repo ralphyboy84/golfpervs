@@ -61,7 +61,7 @@ $(document).ready(function(){
                 case "puttstats":
                     loadPuttStats(startDate, endDate, course, competition);
                     break;
-            };
+            }
          });
     });
     
@@ -127,5 +127,5 @@ $(document).ready(function(){
     };
     loadCourseSummary = function () {
         initStartEndDatePickers();  
-    }
+    };
 });

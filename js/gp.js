@@ -2,23 +2,23 @@ $(document).ready(function(){
     
     ajaxLoader = function () {
         $("#mainContent").html("Please wait loading....<img src='images/ajax-loader.gif' alt='loading' />");   
-    }
+    };
     
     ajaxLoaderDiv = function (div) {
         $("#"+div).html("Please wait loading....<img src='images/ajax-loader.gif' alt='loading' />");   
-    }
+    };
     
     checkSession = function(html) {
         if (html == "sessionlost") {
             document.location.href = "index.php";   
         }
-    }
+    };
     
     pageLoad = function(page, directory) {
         ajaxLoader();
         
         if (directory) {
-            page = directory+"/"+page   
+            page = directory+"/"+page;   
         }
 
         $.ajax({
@@ -37,6 +37,7 @@ $(document).ready(function(){
                     break;
                 case "signout":
                     document.location.href = "index.php";
+                    break;
                 case "stats/roundsummary":
                     initialiseDT("example2");
                     break;
@@ -90,7 +91,7 @@ $(document).ready(function(){
                 $("#notifsdropdown").append('<li class="notificationList"><a href="#"><i class="fa fa-users text-aqua"></i> No new notifications</a></li>');
             }
         });
-    }
+    };
     
     loadJsonNotifs();
     
@@ -162,7 +163,7 @@ $(document).ready(function(){
             "autoWidth": true,
             "order": [[0, "desc"]]
         });
-    }
+    };
     
     initialiseDTNoOrder = function(tableid) {
         $('#'+tableid).DataTable({
@@ -173,7 +174,7 @@ $(document).ready(function(){
             "info": true,
             "autoWidth": true
         });
-    }
+    };
     
     initialiseDTOrderAsc = function(tableid) {
         $('#'+tableid).DataTable({
@@ -186,7 +187,7 @@ $(document).ready(function(){
             "order": [[0, "asc"]],
             "responsive": true
         });
-    }
+    };
     
     $('body').on("click", ".homeTop", function () {
         pageLoad($(this).attr("data-page"), $(this).attr("data-directory"));
@@ -195,7 +196,7 @@ $(document).ready(function(){
     initStartEndDatePickers = function () {
         $("#startDate").datepicker({ dateFormat: 'dd/mm/yyyy', autoclose:true });
         $("#endDate").datepicker({ dateFormat: 'dd/mm/yyyy', autoclose:true });
-    }
+    };
     
     setInterval(function(){
         loadJsonNotifs();

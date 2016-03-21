@@ -18,11 +18,11 @@ $(document).ready(function(){
     });
     
     $('body').on("click", "#registerButton", function(){
-        var fields = ["inputUsernameRegister", "inputForename", "inputSurname", "inputEmail", "inputPasswordRegister", "confirmPassword"]
+        var fields = ["inputUsernameRegister", "inputForename", "inputSurname", "inputEmail", "inputPasswordRegister", "confirmPassword"];
         
         errorFlag = "";
         
-        for (x in fields) {
+        for (var x in fields) {
             if (!$("#"+fields[x]).val()) {
                 $("#"+fields[x]+"Row").addClass("has-error");
                 errorFlag = true;

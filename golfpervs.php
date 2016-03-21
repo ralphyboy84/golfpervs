@@ -196,16 +196,20 @@ require_once("globals/globals.php");
     </div><!-- ./wrapper -->
 
     <!-- REQUIRED JS SCRIPTS -->
-
+    <!-- build:js js/scripts.js -->
     <!-- jQuery 2.1.4 -->
     <script src="template/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    
     <!-- Bootstrap 3.3.5 -->
     <script src="template/bootstrap/js/bootstrap.min.js"></script>
+    
     <!-- Bootstrap DatePicker -->
     <script src="template/plugins/datepicker/bootstrap-datepicker.js"></script>
+    
     <!-- AdminLTE App -->
     <script src="template/dist/js/app.min.js"></script>
-      <!-- DataTables -->
+    
+    <!-- DataTables -->
     <script src="template/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="template/plugins/datatables/dataTables.bootstrap.min.js"></script>
       
@@ -228,5 +232,6 @@ require_once("globals/globals.php");
     <script src="js/fairwayshitoverallchart.js"></script>  
     <script src="js/puttlengthholedlinechart.js"></script>
     <script src="js/swipe.js"></script>
+    <!-- endbuild -->
   </body>
 </html>

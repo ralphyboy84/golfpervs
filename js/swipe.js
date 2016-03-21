@@ -12,7 +12,7 @@ function Swipe(container, options) {
 
   // utilities
   var noop = function() {}; // simple no operation function
-  var offloadFn = function(fn) { setTimeout(fn || noop, 0) }; // offload a functions execution
+  var offloadFn = function(fn) { setTimeout(fn || noop, 0); }; // offload a functions execution
   
   // check browser capabilities
   var browser = {
@@ -285,7 +285,7 @@ function Swipe(container, options) {
     move: function(event) {
 
       // ensure swiping with one touch and not pinching
-      if ( event.touches.length > 1 || event.scale && event.scale !== 1) return
+      if ( event.touches.length > 1 || event.scale && event.scale !== 1) return;
 
       if (options.disableScroll) event.preventDefault();
 
@@ -295,7 +295,7 @@ function Swipe(container, options) {
       delta = {
         x: touches.pageX - start.x,
         y: touches.pageY - start.y
-      }
+      };
 
       // determine if scrolling test has run - one time test
       if ( typeof isScrolling == 'undefined') {
@@ -417,8 +417,8 @@ function Swipe(container, options) {
       }
 
       // kill touchmove and touchend event listeners until touchstart called again
-      element.removeEventListener('touchmove', events, false)
-      element.removeEventListener('touchend', events, false)
+      element.removeEventListener('touchmove', events, false);
+      element.removeEventListener('touchend', events, false);
 
     },
     transitionEnd: function(event) {
@@ -433,7 +433,7 @@ function Swipe(container, options) {
 
     }
 
-  }
+  };
 
   // trigger setup
   setup();
@@ -461,7 +461,7 @@ function Swipe(container, options) {
 
   } else {
 
-    window.onresize = function () { setup() }; // to play nice with old IE
+    window.onresize = function () { setup(); }; // to play nice with old IE
 
   }
 
@@ -548,7 +548,7 @@ function Swipe(container, options) {
       }
 
     }
-  }
+  };
 
 }
 
@@ -559,6 +559,6 @@ if ( window.jQuery || window.Zepto ) {
       return this.each(function() {
         $(this).data('Swipe', new Swipe($(this)[0], params));
       });
-    }
-  })( window.jQuery || window.Zepto )
+    };
+  })( window.jQuery || window.Zepto );
 }

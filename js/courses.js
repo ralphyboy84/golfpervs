@@ -58,7 +58,7 @@ $(document).ready(function(){
 		var returnFlag=0;
 		
 		//check to see if we have any values for the add course input
-		if (document.getElementById("courseName").value == "") {
+		if (document.getElementById("courseName").value === "") {
 			$("#courseName").focus();
 			$("#hiddenCourseNameDiv").show();
 			$("#hiddenCourseNameDiv").addClass("has-error");
@@ -71,11 +71,11 @@ $(document).ready(function(){
 		}
 		
 		//check to see if we have any values for the course location input
-		if (document.getElementById("courseLocation").value == "") {
+		if (document.getElementById("courseLocation").value === "") {
 			$("#hiddenCourseLocationDiv").show();
 			$("#courseLocationForm").addClass("has-error");
 			
-			if (document.getElementById("courseName").value != "") {
+			if (document.getElementById("courseName").value !== "") {
 				$("#courseLocation").focus();
 			}
 			returnFlag=1;
@@ -85,11 +85,11 @@ $(document).ready(function(){
 		}
 
 		//check to see if we have any values for the course location input
-		if (document.getElementById("courseTee").value == "") {
+		if (document.getElementById("courseTee").value === "") {
 			$("#hiddenCourseTeeDiv").show();
 			$("#courseTeeForm").addClass("has-error");
 			
-			if (document.getElementById("courseName").value != "" && document.getElementById("courseLocation").value != "") {
+			if (document.getElementById("courseName").value !== "" && document.getElementById("courseLocation").value !== "") {
 				$("#courseTee").focus();
 			}
 
@@ -190,7 +190,7 @@ $(document).ready(function(){
 		var returnFlag=0;
 
 		//check to see if we have any values for the course location input
-		if (document.getElementById("newTeeCourseTee").value == "") {
+		if (document.getElementById("newTeeCourseTee").value === "") {
 			$("#newTeeHiddenCourseTeeDiv").show();
 			$("#newTeeCourseTeeForm").addClass("has-error");
 			returnFlag=1;

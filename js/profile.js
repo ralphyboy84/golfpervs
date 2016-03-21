@@ -56,7 +56,7 @@ $(document).ready(function(){
     $("body").on("click", "#editprofilebutton", function() {
          var items = ["forename", "surname", "email", "receivenotifs"];
         
-        for (x in items) {
+        for (var x in items) {
             $("#"+items[x]).prop("readonly", false);
             $("#"+items[x]).prop("disabled", false);
             $("#"+items[x]).removeClass("disabled");
