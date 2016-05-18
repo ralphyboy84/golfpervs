@@ -4,6 +4,7 @@ session_start();
 
 require_once("globals/globals.php");
 require_once("coreClasses/loginController.class.php");
+require_once("coreClasses/userController.class.php");
 
 $args = array (
 	'username' => $_POST['inputUsername'],
@@ -18,6 +19,13 @@ if ($loginInfo['res']) {
 	
 	//unset the loginFailed var if its ben set..
 	unset($_SESSION['loginFailed']);
+    
+    $uc = new userController();
+    $args['user'] = $_POST['inputUsername'];
+    $result = $uc->returnUserInfo($args);
+	
+	$args['logins'] = $result['values'][0]['logins'] + 1;
+	$x = $uc->updateUserSignIn ( $args );
 	
 	//redirect towards the main page...
   	header('Location: golfpervs.php');

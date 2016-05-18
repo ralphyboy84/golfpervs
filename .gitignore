@@ -2,3 +2,4 @@ _dev
 _build
 node_modules
 template
+.metadata

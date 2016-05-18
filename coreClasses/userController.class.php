@@ -35,6 +35,15 @@ EOSQL;
         
         return $this->updateQuery($sql);
     }
+    
+    function updateUserSignIn($args)
+    {
+        $logins = $args['logins'];
+        $user	= $args['user'];
+
+        $sql.=" UPDATE user SET lastlogin = now() , logins = '$logins' where username = '$user' ";
+        return $this->updateQuery($sql);
+    }
 }
 
 ?>

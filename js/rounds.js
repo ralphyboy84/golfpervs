@@ -244,6 +244,10 @@ $(document).ready(function(){
         $("#score").val($("#score_select").val());
     });
     
+    $("body").on("change", "#putt_select", function() {
+        $("#putts").val($("#putt_select").val());
+    });
+    
     changeMe = function (someVal) {
         if (someVal.className == "inActiveF") {
             vals = document.getElementsByClassName("activeF");

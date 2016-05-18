@@ -17,8 +17,8 @@ $x = $rc->completeTempRoundInfo($args);
 $args['newroundid'] = $x['insertid'];
 $y = $rc->completeTempScoreInfo($args);
 
-//$rc->deleteTempRoundInfo($args);
-//$rc->deleteTempScoreInfo($args);
+$rc->deleteTempRoundInfo($args);
+$rc->deleteTempScoreInfo($args);
 
 $roundInfo = new roundInfo();
 $roundInfo->setRoundId($x['insertid']);
