@@ -14,9 +14,9 @@ require_once("globals/globals.php");
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Golf Pervs v3.0</title>
-    <!-- build:css css/styles.css -->
     <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">  
+    <!-- build:css css/styles.css -->
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="template/bootstrap/css/bootstrap.min.css">
       <!-- DataTables -->
