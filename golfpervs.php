@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if (!$_SESSION['username']) {
@@ -6,6 +7,7 @@ if (!$_SESSION['username']) {
 }
 
 require_once("globals/globals.php");
+
 ?>
 
 <!DOCTYPE html>
